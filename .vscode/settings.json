@@ -1,3 +1,6 @@
 {
-    "dbt.dbtPythonPathOverride": "/Users/jachwadolne/Desktop/Code Folder/my_projects/dbt-env/bin/python3"
+    "dbt.dbtPythonPathOverride": "/Users/Dolne_Creations/Desktop/Personal_Projects_Master/dolne_creations/dbt/dbt-env/bin/python3",
+    "dbt.dbtProjectPaths": [
+        "dbt"
+    ]
 }

@@ -5,11 +5,13 @@ description: Create, edit, and validate dbt models, macros, tests, analyses, sou
 
 # Develop dbt Artifacts
 
-Workflow for authoring and validating dbt artifacts in this project. Validation runs through real `dbt parse` / `dbt compile` (via the `dbt-env/` virtualenv), so it reports dbt's actual errors — not hand-rolled approximations.
+Workflow for authoring and validating dbt artifacts in this project. Validation runs through real `dbt parse` / `dbt compile` (via the `dbt/dbt-env/` virtualenv), so it reports dbt's actual errors — not hand-rolled approximations.
+
+The dbt project lives in **`dbt/`** at the repo root — `dbt_project.yml`, `models/`, `macros/`, `seeds/`, and the `dbt-env/` virtualenv are all inside it. Paths in this document that name dbt directories (`models/`, `macros/`, `tests/`, …) are relative to `dbt/`.
 
 ## The driver
 
-`.claude/skills/develop-dbt/driver.mjs` wraps the dbt commands you need while developing. It finds the project root automatically (so it works from any subdirectory) and runs dbt from `dbt-env/`. Every command prints the underlying `dbt` invocation, streams dbt's real output (including errors), and exits non-zero on failure.
+`.claude/skills/develop-dbt/driver.mjs` wraps the dbt commands you need while developing. It finds the project root automatically — from any subdirectory, and from the repo root, where it looks into `dbt/` — and runs dbt from `dbt/dbt-env/`. Every command prints the underlying `dbt` invocation, streams dbt's real output (including errors), and exits non-zero on failure.
 
 | Command | What it does | Warehouse? |
 |---|---|---|

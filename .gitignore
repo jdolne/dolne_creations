@@ -3,3 +3,13 @@
 target/
 dbt_packages/
 logs/
+
+
+#AI
+.claude/
+
+# VS Code paths
+.vscode/
+
+# 
+config.py

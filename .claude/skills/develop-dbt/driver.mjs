@@ -23,11 +23,15 @@ const warn = (s) => console.log(paint('yellow', s));
 const fail = (s) => console.error(paint('red', `✗ ${s}`));
 
 // Locate the project root by walking up for dbt_project.yml, so the driver
-// works no matter where in the project it is invoked from.
+// works no matter where in the project it is invoked from. At each level we
+// also check a dbt/ subdirectory, so invoking from the repo root — where the
+// dbt project lives in dbt/, not alongside .claude/ — still resolves.
 function findProjectRoot(start) {
   let dir = start;
   for (;;) {
     if (fs.existsSync(path.join(dir, 'dbt_project.yml'))) return dir;
+    const nested = path.join(dir, 'dbt');
+    if (fs.existsSync(path.join(nested, 'dbt_project.yml'))) return nested;
     const parent = path.dirname(dir);
     if (parent === dir) return null;
     dir = parent;
