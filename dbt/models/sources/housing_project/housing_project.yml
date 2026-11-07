@@ -1,0 +1,9 @@
+version: 2
+sources:
+
+- name: dc_housing_project
+  database: dolne-creations
+  schema: dc_housing_project
+  tables:
+  
+    - name: yeetnoyeet
