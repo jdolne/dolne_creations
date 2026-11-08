@@ -1,0 +1,13 @@
+version: 2
+sources:
+# source yml files are what creates sources not the preceding models.
+# If you have an error for a source table, the problem is upsteam not within the source model.
+# I define the destination source schema within the model folder in dbt_project.yml
+# The schema in which I find the source model and put it in DBT is defined here.
+
+- name: dc_housing_project_raw_data
+  database: dolne-creations
+  schema: dc_housing_project_raw_data 
+  tables:
+  
+    - name: raw_houses_for_sale
