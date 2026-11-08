@@ -43,5 +43,8 @@ models:
       +materialized: view
     learning_macros:
       +materialized: view
+    sources:
+      housing_project:
+        +schema: dc_housing_project_sources
   dbt_bigquery_monitoring:
     +schema: "dbt_bigquery_monitoring"

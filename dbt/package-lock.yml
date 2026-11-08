@@ -1,14 +1,14 @@
 packages:
-  - name: dbt_utils
-    package: dbt-labs/dbt_utils
-    version: 1.3.3
-  - name: dbt_artifacts
-    package: brooklyn-data/dbt_artifacts
-    version: 2.10.1
-  - name: codegen
-    package: dbt-labs/codegen
-    version: 0.14.1
-  - name: dbt_bigquery_monitoring
-    package: bqbooster/dbt_bigquery_monitoring
-    version: 0.26.0
+- package: dbt-labs/dbt_utils
+  name: dbt_utils
+  version: 1.3.3
+- package: brooklyn-data/dbt_artifacts
+  name: dbt_artifacts
+  version: 2.10.1
+- package: dbt-labs/codegen
+  name: codegen
+  version: 0.14.1
+- package: bqbooster/dbt_bigquery_monitoring
+  name: dbt_bigquery_monitoring
+  version: 0.26.0
 sha1_hash: c51af3c3d23c929f32e8a3a4a48355f0ee40ca23
