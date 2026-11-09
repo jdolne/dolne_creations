@@ -82,6 +82,6 @@ def processing_data(created_dataframe):
     
     processed_dataframe = created_dataframe[["propertyId", "listingId", "mlsId", "url", "dataSourceId", "new_construction", "propertyType", "last_sale_date", "beds", "baths", "price", "square_footage", "listing_date", "year_built", "lot_size", "hoa_dues", "fullBaths", "latitude", "longitude", "street_address", "city", "state", "zip", "possibly_the_apartment_number_if_multiple_units", "partialBaths", "servicePolicyId"]]
 
-    return processed_dataframe
+    return processed_dataframe.drop_duplicates()
 
 
