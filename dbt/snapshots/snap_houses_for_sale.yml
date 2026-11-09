@@ -1,0 +1,17 @@
+snapshots:
+  - name: snap_houses_for_sale
+    relation: ref('src_houses_for_sale')
+    description:  The snapshot table to track when and for how long houses are for sale.
+    config:
+      database: dolne-creations
+      schema: dc_housing_project_sources
+      strategy: check
+      check_cols: #start fixing everything below
+        - price
+        - listing_date
+        - hoa_dues
+      unique_key: property_id
+      # snapshot_meta_column_names: this is not required and I like the columns dbt creates
+      dbt_valid_to_current: null # I want the dbt_valid_to date to be the only null column so I can easily see the most up to date row
+      hard_deletes: ignore
+      # I would like to add columns for this snapshot to see if a row has been updated or inserted deleted.

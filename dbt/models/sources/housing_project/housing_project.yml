@@ -11,3 +11,7 @@ sources:
   tables:
   
     - name: raw_houses_for_sale
+      columns:
+        - name: propertyId
+          tests:
+            - unique
